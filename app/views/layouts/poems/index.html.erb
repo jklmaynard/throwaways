@@ -1,0 +1,7 @@
+<h3>Throwaways</h3>
+
+<ul>
+  <% @poems.each do |poem| %>
+  <li><%=link_to poem.name, poem_path(poem)%></li>
+  <% end  %>
+</ul>
