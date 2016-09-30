@@ -3,9 +3,7 @@
 <% if @poem.lines.any? %>
   <ul>
     <% @poem.lines.each do |line| %>
-    <li><%= line.line %></li>
+      <li><%= line.line %></li>
     <% end %>
   </ul>
-
-
 <% end %>

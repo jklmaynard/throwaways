@@ -5,7 +5,7 @@ class PoemsController < ApplicationController
   end
 
   def show
-    @poem = Poem.find(params[:id])
+    @poem = Poem.friendly.find(params[:id])
   end
 
 end
