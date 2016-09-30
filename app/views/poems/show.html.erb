@@ -1,0 +1,11 @@
+<h2><%= @poem.name %></h2>
+
+<% if @poem.lines.any? %>
+  <ul>
+    <% @poem.lines.each do |line| %>
+    <li><%= line.line %></li>
+    <% end %>
+  </ul>
+
+
+<% end %>
