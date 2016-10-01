@@ -7,9 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-poem1 = Poem.create(name: 'Poem Number One')
-poem2 = Poem.create(name: 'Poem Number the second')
-
-line1 = Line.create(line: 'This is the first line of poem one', poem_id: 5)
-line2 = Line.create(line: 'This is the second line', poem_id: 5)
-line3 = Line.create(line: 'This is the first line poem the second', poem_id: 6)
+user1 = User.create(name: 'user', email: 'user@test.com', password: 'password')
