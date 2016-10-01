@@ -1,6 +1,5 @@
 class LinesController < ApplicationController
   def create
-    target = params[:poem_id]
     @poem = Poem.find {|s| s.slug == params[:poem_id]}
     @line = @poem.lines.create(line_params)
     if @line.save
