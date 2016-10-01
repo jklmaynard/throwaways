@@ -14,6 +14,7 @@ class PoemsController < ApplicationController
       redirect_to '/'
     else
       redirect_to :back
+    end
   end
 
   private
