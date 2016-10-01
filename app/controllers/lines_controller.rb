@@ -8,6 +8,14 @@ class LinesController < ApplicationController
       redirect_to 'back'
     end
   end
+  def update
+    @line = Line.find(params[:id])
+    if @line.update(line_params)
+      redirect_to edit_poem_path(@line.poem)
+    else
+      redirect_to '/poems'
+    end
+  end
 
   private
   def line_params

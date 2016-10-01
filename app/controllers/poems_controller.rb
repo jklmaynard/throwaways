@@ -5,6 +5,7 @@ class PoemsController < ApplicationController
   def show
     @poem = Poem.friendly.find(params[:id])
     @line = Line.new
+    @lines = @poem.lines.sort {|a,b| a.line_number <=> b.line_number}
   end
   def new
     @poem = Poem.new
@@ -16,6 +17,10 @@ class PoemsController < ApplicationController
     else
       redirect_to :back
     end
+  end
+  def edit
+    @poem = Poem.find {|s| s.slug == params[:id]}
+    @lines = @poem.lines.sort {|a,b| a.line_number <=> b.line_number}
   end
 
   private

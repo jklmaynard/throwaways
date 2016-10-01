@@ -3,35 +3,38 @@
 
   <% if @poem.lines.any? %>
     <ul id=stanza_one style="list-style-type:none; display:block">
-      <% @poem.lines.each do |line| %>
+      <% @lines.each do |line| %>
         <% if line.stanza_number == 1 %>
           <li><%= line.line %></li>
         <% end %>
       <% end %>
     </ul>
     <ul id=stanza_two style="list-style-type:none; display:block;">
-      <% @poem.lines.each do |line| %>
+      <% @lines.each do |line| %>
         <% if line.stanza_number == 2 %>
         <li><%= line.line %></li>
       <% end %>
     <% end %>    </ul>
     <ul id=stanza_three style="list-style-type:none; display:block;">
-      <% @poem.lines.each do |line| %>
+      <% @lines.each do |line| %>
         <% if line.stanza_number == 3 %>
         <li><%= line.line %></li>
       <% end %>
     <% end %>
     </ul>
     <ul id=stanza_four style="list-style-type:none; display:block;">
-      <% @poem.lines.each do |line| %>
+      <% @lines.each do |line| %>
         <% if line.stanza_number == 4 %>
         <li><%= line.line %></li>
       <% end %>
     <% end %>
     </ul>
   <% end %>
-
   <% if current_user %>
+    <%= link_to 'Edit', edit_poem_path(@poem), class: "btn btn-primary btn-sm" %>
+  <% end %>
+
+  <% if current_user && @poem.lines.length < 14 %>
     <div class="form-horizontal">
       <%= form_for [@poem, @line], :html => {:class => "form-horizontal-center"} do |f| %>
       <div class="form-group">
